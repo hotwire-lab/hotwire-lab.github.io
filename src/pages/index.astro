@@ -154,6 +154,11 @@ import { TOOLS } from '../data/tools';
             </p>
           </div>
         </div>
+
+        <p class="compat-note">
+          <strong>Note:</strong> Live USB requires Chrome, Edge, or Opera on Desktop or Android
+          (USB-OTG). iOS/Safari runs in offline Demo mode.
+        </p>
       </div>
     </section>
 
@@ -204,6 +209,31 @@ import { TOOLS } from '../data/tools';
               </tr>
             </tbody>
           </table>
+        </div>
+
+        <div class="hardware-cta">
+          <div class="hardware-buy-actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?sensecap_affiliate=KvCMmK9&referring_service=link"
+              target="_blank"
+              rel="sponsored noopener noreferrer"
+            >
+              Get XIAO ESP32-S3 ↗
+            </a>
+            <a
+              class="btn btn-secondary"
+              href="https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html?sensecap_affiliate=KvCMmK9&referring_service=link"
+              target="_blank"
+              rel="sponsored noopener noreferrer"
+            >
+              Get XIAO ESP32-C6 ↗
+            </a>
+          </div>
+          <p class="affiliate-note">
+            Want to support HotWire Lab development? Use affiliate code <code>1PWLI2G3</code> at
+            checkout for <strong>2% off</strong> XIAO series boards at no extra cost to you.
+          </p>
         </div>
 
         <div class="safety-box">
@@ -662,6 +692,20 @@ import { TOOLS } from '../data/tools';
     color: var(--muted);
   }
 
+  .compat-note {
+    margin-top: 16px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.28);
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .compat-note strong {
+    color: var(--text);
+  }
+
   /* Hardware table */
   .table-wrap {
     overflow-x: auto;
@@ -693,6 +737,34 @@ import { TOOLS } from '../data/tools';
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+  }
+
+  .hardware-cta {
+    margin-top: 16px;
+    padding: 16px 18px;
+    border-radius: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hardware-buy-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .affiliate-note {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .affiliate-note strong {
+    color: var(--text);
   }
 
   .safety-box {
@@ -762,6 +834,10 @@ import { TOOLS } from '../data/tools';
 
     .topbar-links {
       display: none;
+    }
+
+    .hardware-buy-actions .btn {
+      flex: 1 1 200px;
     }
   }
 </style>

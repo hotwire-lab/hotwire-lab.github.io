@@ -5,8 +5,8 @@ interface Props {
 }
 
 const {
-  title = 'HotWire Lab — Zero-Install Browser USB Hardware Tools',
-  description = 'Turn a Seeed Studio XIAO ESP32-S3 or ESP32-C6 into a Logic Analyzer, Oscilloscope, 1.84–2.79 GHz SDR, and Serial Terminal directly in your browser via Web Serial & WebUSB.',
+  title = 'HotWire Lab — Browser USB Bench Tools for ESP32',
+  description = 'Logic Analyzer, 4-Channel Oscilloscope, 1.84–2.79 GHz SDR, and Serial Terminal in Rust/WASM for Seeed Studio XIAO ESP32-S3 and ESP32-C6.',
 } = Astro.props;
 ---
 
@@ -15,12 +15,19 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0d1117" />
+    <meta name="theme-color" content="#0b0e12" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Kari Vierimaa, Kempele" />
     <link rel="canonical" href="https://hotwire-lab.github.io/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="HotWire Lab" />
@@ -42,15 +49,19 @@ const {
 <style is:global>
   :root {
     color-scheme: dark;
-    --bg: #0d1117;
-    --surface: #131922;
-    --surface-2: #1a2230;
-    --border: #283244;
-    --text: #e6edf3;
-    --muted: #8b949e;
-    --accent: #38bdf8;
-    --ok: #4ade80;
-    --warn: #fbbf24;
+    --bg: #0b0e12;
+    --surface: #11151b;
+    --surface-2: #171d26;
+    --border: #232a35;
+    --border-strong: #323c4b;
+    --text: #e8edf2;
+    --text-soft: #b8c1cc;
+    --muted: #7d8796;
+    --accent: #f0b429;
+    --accent-dim: rgba(240, 180, 41, 0.14);
+    --warn: #e5a93c;
+    --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   }
 
   * {
@@ -63,17 +74,16 @@ const {
     scroll-behavior: smooth;
     background: var(--bg);
     color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, sans-serif;
+    font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
 
   body {
     min-height: 100vh;
-    background:
-      radial-gradient(900px 460px at 50% -120px, rgba(56, 189, 248, 0.14), transparent 70%),
-      var(--bg);
+    background: var(--bg);
     color: var(--text);
     line-height: 1.55;
+    font-size: 15px;
   }
 
   a {
@@ -82,11 +92,12 @@ const {
   }
 
   code {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    font-size: 0.9em;
+    font-family: var(--font-mono);
+    font-size: 0.88em;
     background: var(--surface-2);
     border: 1px solid var(--border);
     padding: 1px 5px;
-    border-radius: 5px;
+    border-radius: 3px;
+    color: var(--text);
   }
 </style>

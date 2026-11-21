@@ -1,77 +1,107 @@
+export interface ToolSpec {
+  label: string;
+  value: string;
+}
+
 export interface HotWireTool {
+  index: string;
   slug: string;
   shortName: string;
   name: string;
-  tagline: string;
-  description: string;
+  summary: string;
+  note: string;
   accent: string;
   appUrl: string;
   repoUrl: string;
   image: string;
   imageAlt: string;
   firmwareMin: string;
-  highlights: string[];
+  specs: ToolSpec[];
 }
 
 export const TOOLS: HotWireTool[] = [
   {
+    index: '01',
     slug: 'logic',
     shortName: 'Logic',
     name: 'HotWire Logic Analyzer',
-    tagline: '8-Channel 20 MHz Pocket Lab & Tri-State Force I/O',
-    description:
-      'Capture 8 digital channels up to 20 MHz / 32,768 samples, force pins (Z / 0 / 1 / PU / PD) with 20 ms short-circuit protection, decode UART, SPI & I²C inline, and export CSV or VCD.',
+    summary:
+      '8-channel digital capture up to 20 MHz with 32,768-sample depth, inline UART / SPI / I²C protocol decoding, CSV/VCD export, and live tri-state pin forcing (Z / 0 / 1 / PU / PD).',
+    note: 'Includes 20 ms hardware contention detection when forcing pins against an active external driver.',
     accent: '#58a6ff',
     appUrl: 'https://hotwire-lab.github.io/logic/',
     repoUrl: 'https://github.com/hotwire-lab/logic',
     image: '/images/logic.png',
     imageAlt: 'HotWire Logic Analyzer 8-channel waveform viewer with protocol decoding and Force I/O strip',
     firmwareMin: 'v1.2.0+',
-    highlights: ['20 MHz · 8 ch (D0–D7)', 'UART / SPI / I²C', 'Force I/O + Short Guard', 'CSV & VCD Export'],
+    specs: [
+      { label: 'Channels', value: '8 digital (D0–D7, 3.3 V CMOS)' },
+      { label: 'Sample rate', value: 'Up to 20 MHz · 32k samples' },
+      { label: 'Decoders', value: 'UART, SPI, I²C · CSV / VCD export' },
+      { label: 'Firmware', value: 'v1.2.0+ (S3 / C6)' },
+    ],
   },
   {
+    index: '02',
     slug: 'scope',
     shortName: 'Scope',
     name: 'HotWire Oscilloscope',
-    tagline: '4-Channel 12-bit GDMA ADC Scope & Live FFT',
-    description:
-      'Real-time digital storage oscilloscope with eFuse-calibrated 12-bit GDMA streaming, draggable channel offsets, 1-2-5 V/div, AUTO-Set, phosphor persistence, Math, X-Y Lissajous, and Radix-2 FFT.',
+    summary:
+      '4-channel 12-bit GDMA ADC oscilloscope with eFuse curve-fitting mV calibration, per-channel V/div and draggable offsets, edge trigger, phosphor persistence, Math, X-Y mode, and Radix-2 FFT.',
+    note: 'Runs at 83.3 kSPS within ESP-IDF spec; S3 Turbo mode pushes up to 1 MSPS by tuning APB_SARADC directly. Built-in square-wave test generator on D6.',
     accent: '#facc15',
     appUrl: 'https://hotwire-lab.github.io/scope/',
     repoUrl: 'https://github.com/hotwire-lab/scope',
     image: '/images/scope.jpg',
     imageAlt: 'HotWire Oscilloscope capturing multi-channel sine and PWM waveforms with cursors',
     firmwareMin: 'v1.0.0+',
-    highlights: ['Up to 1 MSPS (S3 OC)', '4-ch 12-bit GDMA', 'FFT · Math · X-Y Mode', 'Built-in D6 Test Gen'],
+    specs: [
+      { label: 'Inputs', value: '4 ch on S3 (D0–D3) · 3 ch on C6 (D0–D2)' },
+      { label: 'Sample rate', value: '83.3 kSPS spec · up to 1 MSPS S3 OC' },
+      { label: 'Analysis', value: 'Radix-2 FFT, Math, X-Y, Persistence, Cursors' },
+      { label: 'Firmware', value: 'v1.0.0+ (S3 / C6)' },
+    ],
   },
   {
+    index: '03',
     slug: 'sdr',
     shortName: 'SDR',
     name: 'HotWire SDR',
-    tagline: '1.84–2.79 GHz RF Spectrum Analyzer & Waterfall',
-    description:
-      'Direct baseband I/Q RF receiver covering DECT EU, 13cm Ham, Wi-Fi, BLE, and LTE B7 with a 948 MHz wideband scanner, scrolling heatmap waterfall, delta markers, and Raw I/Q constellation.',
+    summary:
+      'Direct baseband I/Q RF spectrum analyzer and waterfall covering 1.84–2.79 GHz (DECT EU, 13cm Ham, Wi-Fi, BLE, LTE B7), with a 948 MHz wideband scanner, delta markers, and raw 8-bit I/Q constellation view.',
+    note: 'Uses the ESP32 internal Wi-Fi RF front-end via raw I/Q dump — practical for relative spectrum inspection and emitter hunting, not a calibrated lab VNA.',
     accent: '#a855f7',
     appUrl: 'https://hotwire-lab.github.io/sdr/',
     repoUrl: 'https://github.com/hotwire-lab/sdr',
     image: '/images/sdr.jpg',
     imageAlt: 'HotWire SDR live RF spectrum and scrolling waterfall display at 1884 MHz DECT EU',
     firmwareMin: 'v2.0.0+',
-    highlights: ['1.84–2.79 GHz Tuning', '948 MHz Wideband Scan', 'Waterfall + M1/M2', 'Raw 8-bit I/Q Viewer'],
+    specs: [
+      { label: 'Frequency', value: '1.84–2.79 GHz (948 MHz wideband scan)' },
+      { label: 'Views', value: 'Spectrum, Waterfall, Peak Hold, Raw I/Q' },
+      { label: 'Antenna', value: 'External U.FL antenna connector' },
+      { label: 'Firmware', value: 'v2.0.0+ (GPL-3.0, S3 / C6)' },
+    ],
   },
   {
+    index: '04',
     slug: 'serial',
     shortName: 'Serial',
     name: 'HotWire Serial Terminal',
-    tagline: 'Cross-Platform Web Serial & WebUSB Monitor + UART Bridge',
-    description:
-      'Desktop Web Serial & Android WebUSB terminal with built-in CDC-ACM, FTDI, CP210x, CH340, and PL2303 drivers, 2 MB ASCII/HEX ring buffer, macros, DTR/RTS/RST, plus optional XIAO 3.3 V UART Bridge.',
+    summary:
+      'Cross-platform Web Serial and Android WebUSB monitor with built-in CDC-ACM, FTDI, CP210x, CH340, and PL2303 drivers, 2 MB ASCII/HEX scrollback, macros, DTR/RTS/RST controls, and optional XIAO 3.3 V UART Bridge mode.',
+    note: 'Works directly with any USB-UART adapter on desktop or Android, or turns a XIAO board into a 3.3 V TTL UART bridge on D6/D7 with pin-swap and polarity inversion.',
     accent: '#4ade80',
     appUrl: 'https://hotwire-lab.github.io/serial/',
     repoUrl: 'https://github.com/hotwire-lab/serial',
     image: '/images/serial.jpg',
     imageAlt: 'HotWire Serial Terminal running with ASCII/HEX views, DTR/RTS/RST controls, and macros',
     firmwareMin: 'Direct USB / v1.0.0+',
-    highlights: ['Desktop + Android WebUSB', 'FTDI / CP210x / CH340', '2 MB ASCII & HEX View', 'XIAO D6/D7 Bridge'],
+    specs: [
+      { label: 'Drivers', value: 'Web Serial + WebUSB (CDC, FTDI, CP210x, CH340, PL2303)' },
+      { label: 'Buffer', value: '2 MB ring buffer · ASCII / HEX / Timestamps' },
+      { label: 'Bridge pins', value: 'D6 TX · D7 RX (3.3 V TTL, up to 2 Mbaud)' },
+      { label: 'Firmware', value: 'Direct USB (none) · Bridge v1.0.0+' },
+    ],
   },
 ];

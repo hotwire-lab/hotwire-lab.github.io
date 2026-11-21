@@ -1,0 +1,92 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'HotWire Lab — Zero-Install Browser USB Hardware Tools',
+  description = 'Turn a Seeed Studio XIAO ESP32-S3 or ESP32-C6 into a Logic Analyzer, Oscilloscope, 1.84–2.79 GHz SDR, and Serial Terminal directly in your browser via Web Serial & WebUSB.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d1117" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Kari Vierimaa, Kempele" />
+    <link rel="canonical" href="https://hotwire-lab.github.io/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="HotWire Lab" />
+    <meta property="og:url" content="https://hotwire-lab.github.io/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://hotwire-lab.github.io/images/scope.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://hotwire-lab.github.io/images/scope.jpg" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    color-scheme: dark;
+    --bg: #0d1117;
+    --surface: #131922;
+    --surface-2: #1a2230;
+    --border: #283244;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #38bdf8;
+    --ok: #4ade80;
+    --warn: #fbbf24;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(900px 460px at 50% -120px, rgba(56, 189, 248, 0.14), transparent 70%),
+      var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.9em;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    padding: 1px 5px;
+    border-radius: 5px;
+  }
+</style>

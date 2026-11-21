@@ -101,7 +101,7 @@ export const TOOLS: HotWireTool[] = [
       { label: 'Drivers', value: 'Web Serial + WebUSB (CDC, FTDI, CP210x, CH340, PL2303)' },
       { label: 'Buffer', value: '2 MB ring buffer · ASCII / HEX / Timestamps' },
       { label: 'Bridge pins', value: 'D6 TX · D7 RX (3.3 V TTL, up to 2 Mbaud)' },
-      { label: 'Firmware', value: 'Direct USB (none) · Bridge v1.0.0+' },
+      { label: 'Firmware', value: 'Direct USB (none) · Bridge v1.0.0+ (S3 / C6)' },
     ],
   },
 ];

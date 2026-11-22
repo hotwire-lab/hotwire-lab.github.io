@@ -164,6 +164,83 @@ const defaultPreview = TOOLS[1]; // Scope as initial hero preview
               </div>
             </article>
           ))}
+
+          <article class="tool-row tool-row-soon" style="--tool-accent:#fb7185;">
+            <div class="tool-media tool-media-placeholder" aria-hidden="true">
+              <svg viewBox="0 0 480 300" class="placeholder-svg">
+                <defs>
+                  <pattern id="gen-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+                    <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.045)" stroke-width="1" />
+                  </pattern>
+                </defs>
+                <rect width="480" height="300" fill="#080a0d" />
+                <rect width="480" height="300" fill="url(#gen-grid)" />
+                <line x1="0" y1="150" x2="480" y2="150" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="4 4" />
+                <!-- Sine wave preview -->
+                <path
+                  d="M 24 150 C 54 68, 84 68, 114 150 C 144 232, 174 232, 204 150 C 234 68, 264 68, 294 150 C 324 232, 354 232, 384 150 C 414 68, 444 68, 456 150"
+                  fill="none"
+                  stroke="#fb7185"
+                  stroke-width="2.5"
+                  opacity="0.85"
+                />
+                <!-- Square wave overlay -->
+                <path
+                  d="M 24 195 L 78 195 L 78 105 L 150 105 L 150 195 L 222 195 L 222 105 L 294 105 L 294 195 L 366 195 L 366 105 L 438 105 L 438 195 L 456 195"
+                  fill="none"
+                  stroke="#38bdf8"
+                  stroke-width="1.6"
+                  opacity="0.45"
+                  stroke-dasharray="4 3"
+                />
+                <rect x="170" y="132" width="140" height="34" rx="4" fill="#11151b" stroke="#fb7185" stroke-width="1" />
+                <text x="240" y="153" text-anchor="middle" fill="#fda4af" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" letter-spacing="0.08em">
+                  COMING SOON
+                </text>
+              </svg>
+            </div>
+
+            <div class="tool-info">
+              <div class="tool-head">
+                <span class="tool-ch">CH05 · GENERATOR</span>
+                <span class="tool-fw">Placeholder · Planned</span>
+              </div>
+
+              <h3>HotWire Signal Generator</h3>
+              <p class="tool-summary">
+                Programmable waveform, PWM, frequency sweep, and digital pattern generator for
+                XIAO ESP32-S3 and ESP32-C6 — controlled directly from the browser over the shared
+                <code>hotwire-core</code> USB transport.
+              </p>
+              <p class="tool-note">
+                Placeholder for the upcoming 5th HotWire Lab instrument. Planned modes include
+                sine/square/triangle waves, variable-duty PWM, and multi-pin digital test patterns.
+              </p>
+
+              <dl class="spec-grid">
+                <div class="spec-item">
+                  <dt>Status</dt>
+                  <dd>Coming Soon (Placeholder)</dd>
+                </div>
+                <div class="spec-item">
+                  <dt>Waveforms</dt>
+                  <dd>Sine, Square, Triangle, PWM</dd>
+                </div>
+                <div class="spec-item">
+                  <dt>Control</dt>
+                  <dd>Browser UI · hotwire-core</dd>
+                </div>
+                <div class="spec-item">
+                  <dt>Target</dt>
+                  <dd>XIAO ESP32-S3 / C6</dd>
+                </div>
+              </dl>
+
+              <div class="tool-actions">
+                <span class="btn btn-ghost btn-disabled" aria-disabled="true">Coming Soon</span>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -1004,6 +1081,32 @@ const defaultPreview = TOOLS[1]; // Scope as initial hero preview
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+
+  .tool-row-soon {
+    opacity: 0.92;
+  }
+
+  .tool-media-placeholder {
+    cursor: default;
+    border-style: dashed;
+    border-color: var(--border-strong);
+  }
+
+  .tool-media-placeholder:hover {
+    border-color: var(--tool-accent);
+  }
+
+  .placeholder-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .btn-disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    pointer-events: none;
   }
 
   .tool-info {

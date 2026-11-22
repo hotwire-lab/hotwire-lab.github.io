@@ -192,9 +192,8 @@ const defaultPreview = TOOLS[1]; // Scope as initial hero preview
             <div>
               <h3>Flash in the browser</h3>
               <p>
-                Open the built-in <strong>Flasher</strong> (<code>esptool-js</code>) to program the
-                bundled image. Connecting a board with another tool&apos;s firmware automatically
-                triggers a switch prompt.
+                Open the built-in <strong>Flasher</strong> to program the bundled image. Connecting
+                a board with another tool&apos;s firmware automatically triggers a switch prompt.
               </p>
             </div>
           </li>
@@ -232,67 +231,141 @@ const defaultPreview = TOOLS[1]; // Scope as initial hero preview
             </figcaption>
             <svg
               class="pinout-svg"
-              viewBox="0 0 420 278"
+              viewBox="0 0 460 308"
               role="img"
-              aria-label="Seeed Studio XIAO ESP32 pinout diagram showing D0 to D7 logic and ADC channels, D6 test generator and UART TX, D7 UART RX, power pins, and U.FL RF connector"
+              aria-label="Seeed Studio XIAO ESP32 pinout diagram showing D0 to D7 logic analyzer channels (software-mappable for I2C, SPI, UART), D0 to D3 ADC channels, D6 test generator and fixed Serial Bridge UART TX, D7 fixed Serial Bridge UART RX, 5V, GND, 3V3 power pins, and U.FL RF antenna connector"
             >
-              <!-- USB-C Connector -->
-              <rect x="176" y="8" width="68" height="22" rx="3" fill="#232a35" stroke="#475569" stroke-width="1.2" />
-              <text x="210" y="22" text-anchor="middle" fill="#b8c1cc" font-family="IBM Plex Mono, monospace" font-size="9">USB-C</text>
+              <defs>
+                <linearGradient id="usbc-metal" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#cbd5e1" />
+                  <stop offset="55%" stop-color="#94a3b8" />
+                  <stop offset="100%" stop-color="#64748b" />
+                </linearGradient>
+                <linearGradient id="shield-metal" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#e2e8f0" />
+                  <stop offset="55%" stop-color="#cbd5e1" />
+                  <stop offset="100%" stop-color="#aeb9c7" />
+                </linearGradient>
+              </defs>
 
-              <!-- PCB Body -->
-              <rect x="148" y="26" width="124" height="226" rx="4" fill="#141a22" stroke="#323c4b" stroke-width="1.5" />
+              <!-- PCB Body (rounded black XIAO board) -->
+              <rect x="166" y="32" width="128" height="214" rx="14" fill="#10141a" stroke="#2d3748" stroke-width="1.5" />
 
-              <!-- MCU Shield -->
-              <rect x="172" y="68" width="76" height="82" rx="2" fill="#1b232e" stroke="#323c4b" stroke-width="1" />
-              <text x="210" y="104" text-anchor="middle" fill="#e8edf2" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="600">ESP32</text>
-              <text x="210" y="119" text-anchor="middle" fill="#7d8796" font-family="IBM Plex Mono, monospace" font-size="9">S3 / C6</text>
+              <!-- USB-C Receptacle -->
+              <rect x="197" y="8" width="66" height="44" rx="3" fill="url(#usbc-metal)" stroke="#475569" stroke-width="1" />
+              <rect x="205" y="42" width="50" height="8" rx="1.5" fill="#1e293b" />
+              <line x1="214" y1="42" x2="214" y2="50" stroke="#94a3b8" stroke-width="1.2" />
+              <line x1="230" y1="42" x2="230" y2="50" stroke="#94a3b8" stroke-width="1.2" />
+              <line x1="246" y1="42" x2="246" y2="50" stroke="#94a3b8" stroke-width="1.2" />
+              <text x="230" y="29" text-anchor="middle" fill="#1e293b" font-family="IBM Plex Mono, monospace" font-size="8.5" font-weight="600">USB-C</text>
 
-              <!-- U.FL Antenna Pad -->
-              <rect x="195" y="218" width="30" height="22" rx="2" fill="#1b232e" stroke="#a855f7" stroke-width="1.2" />
-              <circle cx="210" cy="229" r="5" fill="none" stroke="#a855f7" stroke-width="1.2" />
-              <text x="210" y="268" text-anchor="middle" fill="#a855f7" font-family="IBM Plex Mono, monospace" font-size="9.5">U.FL ANT (SDR 1.84–2.79 GHz)</text>
-              <line x1="210" y1="240" x2="210" y2="256" stroke="#a855f7" stroke-width="1" stroke-dasharray="2 2" />
+              <!-- R (Reset) & B (Boot) Buttons + Status LEDs -->
+              <rect x="176" y="38" width="12" height="8" rx="1.5" fill="#cbd5e1" stroke="#475569" stroke-width="0.7" />
+              <circle cx="182" cy="42" r="2.2" fill="#f8fafc" stroke="#64748b" stroke-width="0.6" />
+              <text x="182" y="56" text-anchor="middle" fill="#94a3b8" font-family="IBM Plex Mono, monospace" font-size="7" font-weight="600">R</text>
+              <rect x="180" y="59" width="4" height="7" rx="0.8" fill="#f59e0b" opacity="0.85" />
 
-              <!-- Left Pins: D0..D6 -->
+              <rect x="272" y="38" width="12" height="8" rx="1.5" fill="#cbd5e1" stroke="#475569" stroke-width="0.7" />
+              <circle cx="278" cy="42" r="2.2" fill="#f8fafc" stroke="#64748b" stroke-width="0.6" />
+              <text x="278" y="56" text-anchor="middle" fill="#94a3b8" font-family="IBM Plex Mono, monospace" font-size="7" font-weight="600">B</text>
+              <rect x="276" y="59" width="4" height="7" rx="0.8" fill="#38bdf8" opacity="0.85" />
+
+              <!-- Metallic RF Shield -->
+              <rect x="185" y="70" width="90" height="108" rx="4" fill="url(#shield-metal)" stroke="#64748b" stroke-width="1" />
+              <text x="230" y="106" text-anchor="middle" fill="#0f172a" font-family="IBM Plex Sans, sans-serif" font-size="10.5" font-weight="700" letter-spacing="-0.02em">seeed studio</text>
+              <text x="230" y="124" text-anchor="middle" fill="#1e293b" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="600">XIAO ESP32</text>
+              <text x="230" y="139" text-anchor="middle" fill="#475569" font-family="IBM Plex Mono, monospace" font-size="8.5" font-weight="600">S3 / C6</text>
+              <line x1="200" y1="150" x2="260" y2="150" stroke="#94a3b8" stroke-width="0.8" />
+              <text x="230" y="164" text-anchor="middle" fill="#475569" font-family="IBM Plex Mono, monospace" font-size="7.5" font-weight="600">HOTWIRE LAB</text>
+
+              <!-- Gold U.FL External Antenna Connector (bottom-left) -->
+              <rect x="186" y="216" width="20" height="20" rx="2.5" fill="#ca9a2e" stroke="#facc15" stroke-width="0.8" />
+              <circle cx="196" cy="226" r="6.5" fill="#10141a" stroke="#eab308" stroke-width="1.6" />
+              <circle cx="196" cy="226" r="2.2" fill="#facc15" />
+
+              <!-- Onboard Ceramic Chip Antenna (bottom-right) -->
+              <rect x="228" y="220" width="42" height="12" rx="1.5" fill="#94a3b8" stroke="#475569" stroke-width="0.8" />
+              <rect x="228" y="220" width="6" height="12" rx="1" fill="#cbd5e1" />
+              <rect x="264" y="220" width="6" height="12" rx="1" fill="#cbd5e1" />
+              <circle cx="249" cy="226" r="2" fill="#475569" />
+
+              <!-- U.FL Antenna Callout Pill -->
+              <polyline points="196,236 196,262 214,262" fill="none" stroke="#a855f7" stroke-width="1.1" />
+              <rect x="122" y="253" width="216" height="18" rx="3" fill="#7e22ce" />
+              <text x="230" y="265" text-anchor="middle" fill="#ffffff" font-family="IBM Plex Mono, monospace" font-size="8.5" font-weight="600">U.FL EXT. ANT · SDR 1.84–2.79 GHz</text>
+
+              <!-- Left Pins: D0..D6 (Gold castellated pads + Seeed-style color pills) -->
               {[
-                { pin: 'D0', y: 54, note: 'LA0 · ADC CH1', color: '#facc15' },
-                { pin: 'D1', y: 82, note: 'LA1 · ADC CH2', color: '#facc15' },
-                { pin: 'D2', y: 110, note: 'LA2 · ADC CH3', color: '#facc15' },
-                { pin: 'D3', y: 138, note: 'LA3 · ADC CH4*', color: '#facc15' },
-                { pin: 'D4', y: 166, note: 'LA4 · I²C SDA', color: '#58a6ff' },
-                { pin: 'D5', y: 194, note: 'LA5 · I²C SCL', color: '#58a6ff' },
-                { pin: 'D6', y: 222, note: 'LA6 · TX · TEST', color: '#4ade80' },
+                { pin: 'D0', y: 64, note: 'LA0 · ADC CH1', noteBg: '#d97706' },
+                { pin: 'D1', y: 88, note: 'LA1 · ADC CH2', noteBg: '#d97706' },
+                { pin: 'D2', y: 112, note: 'LA2 · ADC CH3', noteBg: '#d97706' },
+                { pin: 'D3', y: 136, note: 'LA3 · ADC CH4*', noteBg: '#d97706' },
+                { pin: 'D4', y: 160, note: 'LA4 · LOGIC CH4', noteBg: '#4d7c0f' },
+                { pin: 'D5', y: 184, note: 'LA5 · LOGIC CH5', noteBg: '#4d7c0f' },
+                { pin: 'D6', y: 208, note: 'LA6 · TX* · TEST', noteBg: '#0d9488' },
               ].map((p) => (
                 <g>
-                  <circle cx="156" cy={p.y} r="4.5" fill="#0b0e12" stroke={p.color} stroke-width="1.5" />
-                  <text x="166" y={p.y + 3} fill="#e8edf2" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="600">{p.pin}</text>
-                  <line x1="126" y1={p.y} x2="150" y2={p.y} stroke="#2a3340" stroke-width="1" />
-                  <text x="122" y={p.y + 3} text-anchor="end" fill={p.color} font-family="IBM Plex Mono, monospace" font-size="9">{p.note}</text>
+                  <!-- Gold castellated pad -->
+                  <circle cx="168" cy={p.y} r="5.5" fill="#d4a338" stroke="#854d0e" stroke-width="0.7" />
+                  <circle cx="168" cy={p.y} r="2.6" fill="#0b0e12" />
+                  <!-- Trace line -->
+                  <line x1="154" y1={p.y} x2="162" y2={p.y} stroke="#475569" stroke-width="1" />
+                  <!-- Pin name pill (GPIO green) -->
+                  <rect x="124" y={p.y - 8.5} width="30" height="17" rx="3" fill="#65a30d" />
+                  <text x="139" y={p.y + 3} text-anchor="middle" fill="#ffffff" font-family="IBM Plex Mono, monospace" font-size="8.5" font-weight="600">{p.pin}</text>
+                  <!-- Function pill -->
+                  <line x1="120" y1={p.y} x2="124" y2={p.y} stroke="#475569" stroke-width="1" />
+                  <rect x="8" y={p.y - 8.5} width="112" height="17" rx="3" fill={p.noteBg} />
+                  <text x="64" y={p.y + 3} text-anchor="middle" fill="#ffffff" font-family="IBM Plex Mono, monospace" font-size="8.5" font-weight="600">{p.note}</text>
                 </g>
               ))}
 
               <!-- Right Pins: 5V, GND, 3V3, D10, D9, D8, D7 -->
               {[
-                { pin: '5V', y: 54, note: 'VBUS (USB)', color: '#7d8796' },
-                { pin: 'GND', y: 82, note: 'Common GND', color: '#7d8796' },
-                { pin: '3V3', y: 110, note: '3.3 V Ref Out', color: '#e5a93c' },
-                { pin: 'D10', y: 138, note: 'GPIO / Unused', color: '#4b5563' },
-                { pin: 'D9', y: 166, note: 'GPIO / Unused', color: '#4b5563' },
-                { pin: 'D8', y: 194, note: 'GPIO / Unused', color: '#4b5563' },
-                { pin: 'D7', y: 222, note: 'LA7 · UART RX', color: '#4ade80' },
+                { pin: '5V', y: 64, pinBg: '#dc2626', pinText: '#ffffff', pinStroke: 'none', note: 'VBUS (USB)', noteBg: '#991b1b', noteText: '#fecaca', noteStroke: 'none' },
+                { pin: 'GND', y: 88, pinBg: '#0b0e12', pinText: '#ffffff', pinStroke: '#cbd5e1', note: 'Common GND', noteBg: '#161b22', noteText: '#e2e8f0', noteStroke: '#64748b' },
+                { pin: '3V3', y: 112, pinBg: '#ef4444', pinText: '#ffffff', pinStroke: 'none', note: '3.3V Ref Out', noteBg: '#991b1b', noteText: '#fecaca', noteStroke: 'none' },
+                { pin: 'D10', y: 136, pinBg: '#27303d', pinText: '#94a3b8', pinStroke: 'none', note: 'GPIO / Unused', noteBg: '#171d26', noteText: '#64748b', noteStroke: '#2b3442' },
+                { pin: 'D9', y: 160, pinBg: '#27303d', pinText: '#94a3b8', pinStroke: 'none', note: 'GPIO / Unused', noteBg: '#171d26', noteText: '#64748b', noteStroke: '#2b3442' },
+                { pin: 'D8', y: 184, pinBg: '#27303d', pinText: '#94a3b8', pinStroke: 'none', note: 'GPIO / Unused', noteBg: '#171d26', noteText: '#64748b', noteStroke: '#2b3442' },
+                { pin: 'D7', y: 208, pinBg: '#65a30d', pinText: '#ffffff', pinStroke: 'none', note: 'LA7 · UART RX*', noteBg: '#0d9488', noteText: '#ffffff', noteStroke: 'none' },
               ].map((p) => (
                 <g>
-                  <circle cx="264" cy={p.y} r="4.5" fill="#0b0e12" stroke={p.color} stroke-width="1.5" />
-                  <text x="254" y={p.y + 3} text-anchor="end" fill="#e8edf2" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="600">{p.pin}</text>
-                  <line x1="270" y1={p.y} x2="294" y2={p.y} stroke="#2a3340" stroke-width="1" />
-                  <text x="298" y={p.y + 3} text-anchor="start" fill={p.color} font-family="IBM Plex Mono, monospace" font-size="9">{p.note}</text>
+                  <!-- Gold castellated pad -->
+                  <circle cx="292" cy={p.y} r="5.5" fill="#d4a338" stroke="#854d0e" stroke-width="0.7" />
+                  <circle cx="292" cy={p.y} r="2.6" fill="#0b0e12" />
+                  <!-- Trace line -->
+                  <line x1="298" y1={p.y} x2="306" y2={p.y} stroke="#475569" stroke-width="1" />
+                  <!-- Pin name pill -->
+                  <rect x="306" y={p.y - 8.5} width="32" height="17" rx="3" fill={p.pinBg} stroke={p.pinStroke} stroke-width="1" />
+                  <text x="322" y={p.y + 3} text-anchor="middle" fill={p.pinText} font-family="IBM Plex Mono, monospace" font-size="8.5" font-weight="600">{p.pin}</text>
+                  <!-- Function pill -->
+                  <line x1="338" y1={p.y} x2="342" y2={p.y} stroke="#475569" stroke-width="1" />
+                  <rect x="342" y={p.y - 8.5} width="110" height="17" rx="3" fill={p.noteBg} stroke={p.noteStroke} stroke-width="1" />
+                  <text x="397" y={p.y + 3} text-anchor="middle" fill={p.noteText} font-family="IBM Plex Mono, monospace" font-size="8.5" font-weight="600">{p.note}</text>
+                </g>
+              ))}
+
+              <!-- Color Legend Bar -->
+              {[
+                { label: 'POWER', x: 14, w: 58, bg: '#dc2626', stroke: 'none' },
+                { label: 'GND', x: 78, w: 46, bg: '#0b0e12', stroke: '#cbd5e1' },
+                { label: 'GPIO / LA', x: 130, w: 76, bg: '#65a30d', stroke: 'none' },
+                { label: 'ADC', x: 212, w: 48, bg: '#d97706', stroke: 'none' },
+                { label: 'UART* / TEST', x: 266, w: 96, bg: '#0d9488', stroke: 'none' },
+                { label: 'RF / SDR', x: 368, w: 78, bg: '#7e22ce', stroke: 'none' },
+              ].map((item) => (
+                <g>
+                  <rect x={item.x} y="284" width={item.w} height="16" rx="2.5" fill={item.bg} stroke={item.stroke} stroke-width="0.9" />
+                  <text x={item.x + item.w / 2} y="295" text-anchor="middle" fill="#ffffff" font-family="IBM Plex Mono, monospace" font-size="7.5" font-weight="600">{item.label}</text>
                 </g>
               ))}
             </svg>
             <p class="pinout-footnote">
-              * ADC CH4 (D3) is available on XIAO ESP32-S3 (4 ch); XIAO ESP32-C6 supports 3 ADC
-              channels (D0–D2).
+              * ADC CH4 (D3) is available on XIAO ESP32-S3 (4 ch); C6 supports 3 ADC channels
+              (D0–D2). In the Logic Analyzer, I²C, SPI, and UART decoders can be assigned to any
+              <code>D0</code>–<code>D7</code> pin; only Serial Terminal Bridge UART pins (
+              <code>D6</code> TX / <code>D7</code> RX) are fixed.
             </p>
           </figure>
 
@@ -355,8 +428,9 @@ const defaultPreview = TOOLS[1]; // Scope as initial hero preview
               Get XIAO ESP32-C6 ↗
             </a>
           </div>
+          <p class="affiliate-title">Want to support HotWire Lab development?</p>
           <p class="affiliate-note">
-            Want to support HotWire Lab development? Use affiliate code{' '}
+            Use affiliate code{' '}
             <button type="button" class="code-copy" id="copy-code-btn" data-code="1PWLI2G3" title="Copy affiliate code">
               <code>1PWLI2G3</code>
               <span class="copy-label" id="copy-code-label">Copy</span>
@@ -376,8 +450,8 @@ const defaultPreview = TOOLS[1]; // Scope as initial hero preview
             <h3>Shared core: <code>hotwire-core</code></h3>
             <p>
               Rust/WASM crate unifying Web Serial, Android WebUSB (CDC-ACM, FTDI, CP210x, CH340,
-              PL2303), zero-copy binary framing, <code>0x83</code> firmware verification,{' '}
-              <code>esptool-js</code> flashing, and touch gestures across all four apps.
+              PL2303), zero-copy binary framing, firmware verification, in-browser flashing, and
+              touch gestures across all four apps.
             </p>
           </div>
           <a
@@ -1087,9 +1161,17 @@ const defaultPreview = TOOLS[1]; // Scope as initial hero preview
     flex-wrap: wrap;
   }
 
+  .affiliate-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.35;
+    margin-top: 2px;
+  }
+
   .affiliate-note {
-    font-size: 13px;
-    color: var(--muted);
+    font-size: 14px;
+    color: var(--text-soft);
     line-height: 1.55;
   }
 

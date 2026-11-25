@@ -104,4 +104,25 @@ export const TOOLS: HotWireTool[] = [
       { label: 'Firmware', value: 'Direct USB (none) · Bridge v1.0.0+ (S3 / C6)' },
     ],
   },
+  {
+    index: '05',
+    slug: 'siggen',
+    shortName: 'Gen',
+    name: 'HotWire Signal Generator',
+    summary:
+      'Dual-channel DDS waveform, hardware LEDC Square/PWM (up to 20 MHz), linear/log frequency sweep, and 4-channel programmable digital pattern generator for XIAO ESP32-S3 and ESP32-C6.',
+    note: 'Square and PWM modes use native hardware LEDC timers; Sine, Triangle, Sawtooth, DC, and Noise modulate a 312.5 kHz PWM carrier (add a 1 kΩ + 10 nF RC low-pass filter for smooth analog output).',
+    accent: '#fb7185',
+    appUrl: 'https://hotwire-lab.github.io/siggen/',
+    repoUrl: 'https://github.com/hotwire-lab/siggen',
+    image: '/images/siggen.svg',
+    imageAlt: 'HotWire Signal Generator dual-channel sine/square waveform preview and 4-channel digital pattern grid',
+    firmwareMin: 'v1.0.0+',
+    specs: [
+      { label: 'Outputs', value: 'CH1 (D0) · CH2 (D1) · Pattern (D2–D5)' },
+      { label: 'Hardware PWM', value: '1 Hz–20 MHz Square / variable-duty PWM' },
+      { label: 'DDS Waveforms', value: 'Sine, Triangle, Saw, DC, Noise + Sweep' },
+      { label: 'Firmware', value: 'v1.0.0+ (S3 / C6)' },
+    ],
+  },
 ];

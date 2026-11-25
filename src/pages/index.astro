@@ -44,12 +44,12 @@ const defaultPreview = TOOLS[1]; // Scope as initial hero preview
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="mono-kicker">RUST / WASM · WEB SERIAL &amp; WEBUSB · XIAO ESP32-S3 / C6</p>
-          <h1>Four USB bench tools on one $5 ESP32.</h1>
+          <h1>Five USB bench tools on one $5 ESP32.</h1>
           <p class="hero-lead">
-            Logic analyzer, 4-channel oscilloscope, 1.84–2.79 GHz RF spectrum viewer, and
-            USB/UART serial monitor running directly in Chrome or Edge on desktop and Android.
-            Flash firmware from the browser, switch tools without re-granting USB permissions, or
-            test offline in Demo mode.
+            Logic analyzer, 4-channel oscilloscope, 1.84–2.79 GHz RF spectrum viewer,
+            USB/UART serial monitor, and dual-channel signal generator running directly in Chrome or
+            Edge on desktop and Android. Flash firmware from the browser, switch tools without
+            re-granting USB permissions, or test offline in Demo mode.
           </p>
 
           <div class="hero-actions">
@@ -120,9 +120,9 @@ const defaultPreview = TOOLS[1]; // Scope as initial hero preview
       <div class="container">
         <div class="section-header">
           <span class="section-index">01 / INSTRUMENTS</span>
-          <h2>Four browser apps, one shared USB origin</h2>
+          <h2>Five browser apps, one shared USB origin</h2>
           <p>
-            All four PWAs run under <code>hotwire-lab.github.io</code>. Grant USB access once and
+            All five PWAs run under <code>hotwire-lab.github.io</code>. Grant USB access once and
             jump between instruments directly from the top bar.
           </p>
         </div>
@@ -172,91 +172,6 @@ const defaultPreview = TOOLS[1]; // Scope as initial hero preview
               </div>
             </article>
           ))}
-
-          <article class="tool-row tool-row-soon" style="--tool-accent:#fb7185;">
-            <div class="tool-media tool-media-placeholder" aria-hidden="true">
-              <svg viewBox="0 0 480 300" class="placeholder-svg">
-                <defs>
-                  <pattern id="gen-grid" width="30" height="30" patternUnits="userSpaceOnUse">
-                    <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.045)" stroke-width="1" />
-                  </pattern>
-                </defs>
-                <rect width="480" height="300" fill="#080a0d" />
-                <rect width="480" height="300" fill="url(#gen-grid)" />
-                <line x1="0" y1="150" x2="480" y2="150" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="4 4" />
-                <!-- Sine wave preview -->
-                <path
-                  d="M 24 150 C 54 68, 84 68, 114 150 C 144 232, 174 232, 204 150 C 234 68, 264 68, 294 150 C 324 232, 354 232, 384 150 C 414 68, 444 68, 456 150"
-                  fill="none"
-                  stroke="#fb7185"
-                  stroke-width="2.5"
-                  opacity="0.85"
-                />
-                <!-- Square wave overlay -->
-                <path
-                  d="M 24 195 L 78 195 L 78 105 L 150 105 L 150 195 L 222 195 L 222 105 L 294 105 L 294 195 L 366 195 L 366 105 L 438 105 L 438 195 L 456 195"
-                  fill="none"
-                  stroke="#38bdf8"
-                  stroke-width="1.6"
-                  opacity="0.45"
-                  stroke-dasharray="4 3"
-                />
-                <rect x="170" y="132" width="140" height="34" rx="4" fill="#11151b" stroke="#fb7185" stroke-width="1" />
-                <text x="240" y="153" text-anchor="middle" fill="#fda4af" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" letter-spacing="0.08em">
-                  COMING SOON
-                </text>
-              </svg>
-            </div>
-
-            <div class="tool-info">
-              <div class="tool-head">
-                <span class="tool-ch">CH05 · GENERATOR</span>
-                <span class="tool-fw">Placeholder · Planned</span>
-              </div>
-
-              <h3>HotWire Signal Generator</h3>
-              <p class="tool-summary">
-                Programmable waveform, PWM, frequency sweep, and digital pattern generator for
-                XIAO ESP32-S3 and ESP32-C6 — controlled directly from the browser over the shared
-                <code>hotwire-core</code> USB transport.
-              </p>
-              <p class="tool-note">
-                Placeholder for the upcoming 5th HotWire Lab instrument. Planned modes include
-                sine/square/triangle waves, variable-duty PWM, and multi-pin digital test patterns.
-              </p>
-
-              <dl class="spec-grid">
-                <div class="spec-item">
-                  <dt>Status</dt>
-                  <dd>Coming Soon (Placeholder)</dd>
-                </div>
-                <div class="spec-item">
-                  <dt>Waveforms</dt>
-                  <dd>Sine, Square, Triangle, PWM</dd>
-                </div>
-                <div class="spec-item">
-                  <dt>Control</dt>
-                  <dd>Browser UI · hotwire-core</dd>
-                </div>
-                <div class="spec-item">
-                  <dt>Target</dt>
-                  <dd>XIAO ESP32-S3 / C6</dd>
-                </div>
-              </dl>
-
-              <div class="tool-actions">
-                <span class="btn btn-ghost btn-disabled" aria-disabled="true">Coming Soon</span>
-                <a
-                  class="btn btn-ghost"
-                  href="https://github.com/hotwire-lab/hotwire-lab.github.io/issues/new?template=feature_request.yml&tool=Signal+Generator+%28upcoming%29"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Request Feature ↗
-                </a>
-              </div>
-            </div>
-          </article>
         </div>
       </div>
     </section>
@@ -497,6 +412,12 @@ const defaultPreview = TOOLS[1]; // Scope as initial hero preview
                   <td>Direct USB + D6/D7 Bridge</td>
                   <td><code>D6</code> TX · <code>D7</code> RX</td>
                 </tr>
+                <tr>
+                  <td><strong>Signal Generator</strong></td>
+                  <td>2-ch DDS/LEDC (20 MHz) + 4-ch Pattern</td>
+                  <td>2-ch DDS/LEDC (20 MHz) + 4-ch Pattern</td>
+                  <td><code>D0</code>–<code>D1</code> · <code>D2</code>–<code>D5</code></td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -568,6 +489,7 @@ const defaultPreview = TOOLS[1]; // Scope as initial hero preview
         <a href="https://hotwire-lab.github.io/scope/">Scope</a>
         <a href="https://hotwire-lab.github.io/sdr/">SDR</a>
         <a href="https://hotwire-lab.github.io/serial/">Serial</a>
+        <a href="https://hotwire-lab.github.io/siggen/">Gen</a>
         <a href="https://github.com/hotwire-lab" target="_blank" rel="noreferrer">GitHub</a>
         <a
           href="https://github.com/hotwire-lab/hotwire-lab.github.io/issues/new/choose"

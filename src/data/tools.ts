@@ -33,12 +33,12 @@ export const TOOLS: HotWireTool[] = [
     repoUrl: 'https://github.com/hotwire-lab/logic',
     image: '/images/logic.png',
     imageAlt: 'HotWire Logic Analyzer 8-channel waveform viewer with protocol decoding and Force I/O strip',
-    firmwareMin: 'v1.2.0+',
+    firmwareMin: 'v1.2.1+',
     specs: [
       { label: 'Channels', value: '8 digital (D0–D7, 3.3 V CMOS)' },
       { label: 'Sample rate', value: 'Up to 20 MHz · 32k samples' },
       { label: 'Decoders', value: 'UART, SPI, I²C · CSV / VCD export' },
-      { label: 'Firmware', value: 'v1.2.0+ (S3 / C6)' },
+      { label: 'Firmware', value: 'v1.2.1+ (S3 / C6)' },
     ],
   },
   {
@@ -54,12 +54,12 @@ export const TOOLS: HotWireTool[] = [
     repoUrl: 'https://github.com/hotwire-lab/scope',
     image: '/images/scope.jpg',
     imageAlt: 'HotWire Oscilloscope capturing multi-channel sine and PWM waveforms with cursors',
-    firmwareMin: 'v1.1.0+',
+    firmwareMin: 'v1.1.1+',
     specs: [
       { label: 'Inputs', value: '4 ch on S3 (D0–D3) · 3 ch on C6 (D0–D2)' },
       { label: 'Sample rate', value: '83.3 kSPS spec · up to 1 MSPS S3 OC' },
       { label: 'Analysis', value: 'Radix-2 FFT, Math, X-Y, Persistence, Cursors' },
-      { label: 'Firmware', value: 'v1.1.0+ (S3 / C6)' },
+      { label: 'Firmware', value: 'v1.1.1+ (S3 / C6)' },
     ],
   },
   {
@@ -75,12 +75,12 @@ export const TOOLS: HotWireTool[] = [
     repoUrl: 'https://github.com/hotwire-lab/sdr',
     image: '/images/sdr.jpg',
     imageAlt: 'HotWire SDR live RF spectrum and scrolling waterfall display at 1884 MHz DECT EU',
-    firmwareMin: 'v2.1.0+',
+    firmwareMin: 'v2.1.1+',
     specs: [
       { label: 'Frequency', value: '1.84–2.79 GHz (948 MHz wideband scan)' },
       { label: 'Views', value: 'Spectrum, Waterfall, Peak Hold, Raw I/Q' },
       { label: 'Antenna', value: 'External U.FL antenna connector' },
-      { label: 'Firmware', value: 'v2.1.0+ (GPL-3.0, S3 / C6)' },
+      { label: 'Firmware', value: 'v2.1.1+ (GPL-3.0, S3 / C6)' },
     ],
   },
   {
@@ -96,12 +96,12 @@ export const TOOLS: HotWireTool[] = [
     repoUrl: 'https://github.com/hotwire-lab/serial',
     image: '/images/serial.jpg',
     imageAlt: 'HotWire Serial Terminal running with ASCII/HEX views, DTR/RTS/RST controls, and macros',
-    firmwareMin: 'Direct USB / v1.1.0+',
+    firmwareMin: 'Direct USB / v1.1.1+',
     specs: [
       { label: 'Drivers', value: 'Web Serial + WebUSB (CDC, FTDI, CP210x, CH340, PL2303)' },
       { label: 'Buffer', value: '2 MB ring buffer · ASCII / HEX / Timestamps' },
       { label: 'Bridge pins', value: 'D6 TX · D7 RX (3.3 V TTL, up to 2 Mbaud)' },
-      { label: 'Firmware', value: 'Direct USB (none) · Bridge v1.1.0+ (S3 / C6)' },
+      { label: 'Firmware', value: 'Direct USB (none) · Bridge v1.1.1+ (S3 / C6)' },
     ],
   },
   {
@@ -117,12 +117,12 @@ export const TOOLS: HotWireTool[] = [
     repoUrl: 'https://github.com/hotwire-lab/siggen',
     image: '/images/siggen.svg',
     imageAlt: 'HotWire Signal Generator dual-channel sine/square waveform preview and 4-channel digital pattern grid',
-    firmwareMin: 'v1.1.0+',
+    firmwareMin: 'v1.1.1+',
     specs: [
       { label: 'Outputs', value: 'CH1 (D0) · CH2 (D1) · Pattern (D2–D5)' },
       { label: 'Hardware PWM', value: '1 Hz–20 MHz Square / variable-duty PWM' },
       { label: 'DDS Waveforms', value: 'Sine, Triangle, Saw, DC, Noise + Sweep' },
-      { label: 'Firmware', value: 'v1.1.0+ (S3 / C6)' },
+      { label: 'Firmware', value: 'v1.1.1+ (S3 / C6)' },
     ],
   },
 ];

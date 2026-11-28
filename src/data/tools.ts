@@ -26,8 +26,8 @@ export const TOOLS: HotWireTool[] = [
     shortName: 'Bench',
     name: 'HotWire Bench',
     summary:
-      'One mixed-signal instrument: 2 calibrated analog channels, 8 digital channels, shared device timebase, UART/SPI/I²C decoders, and an LEDC generator in a single oscilloscope-style view.',
-    note: 'V0.1 proves the integrated workflow on XIAO ESP32-S3: 1 MSPS digital, 83.3 kSPS total ADC, shared t0/trigger/skew metadata, no-wiring self-test and saved-capture rendering.',
+      'One mixed-signal instrument: up to 8 configurable AD/DI/DO channels, shared device timebase, UART/SPI/I²C decoders, and per-pin digital outputs in a single oscilloscope-style view.',
+    note: 'V0.2 proves the integrated workflow on XIAO ESP32-S3: 1 MSPS digital, 83.3 kSPS total ADC, shared t0/trigger/skew metadata, no-wiring self-test and saved-capture rendering.',
     accent: '#2dd4bf',
     appUrl: 'https://hotwire-lab.github.io/bench/',
     repoUrl: 'https://github.com/hotwire-lab/bench',
@@ -35,7 +35,7 @@ export const TOOLS: HotWireTool[] = [
     imageAlt: 'HotWire Bench mixed-signal view with analog channels, digital lanes, UART decode and generator controls',
     firmwareMin: 'v0.1.0+',
     specs: [
-      { label: 'Channels', value: '2 analog + 8 digital (D0–D7)' },
+      { label: 'Channels', value: '8 configurable: AD (D0–D3), DI/DO (D0–D7)' },
       { label: 'Rates', value: '1 MSPS digital · 83.3 kSPS total ADC' },
       { label: 'View', value: 'Shared timebase · UART/SPI/I²C · generator' },
       { label: 'Firmware', value: 'v0.1.0+ (S3, mixed-signal)' },
@@ -147,4 +147,5 @@ export const TOOLS: HotWireTool[] = [
     ],
   },
 ];
+
 

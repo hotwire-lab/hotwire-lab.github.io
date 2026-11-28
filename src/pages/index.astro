@@ -46,10 +46,11 @@ const defaultPreview = TOOLS[0]; // Bench as initial hero preview
           <p class="mono-kicker">RUST / WASM · WEB SERIAL &amp; WEBUSB · XIAO ESP32-S3 / C6</p>
           <h1>Six browser bench tools on one \$5 ESP32.</h1>
           <p class="hero-lead">
-            Logic analyzer, 4-channel oscilloscope, 1.84–2.79 GHz RF spectrum viewer,
-            USB/UART serial monitor, and dual-channel signal generator running directly in Chrome or
-            Edge on desktop and Android. Flash firmware from the browser, switch tools without
-            re-granting USB permissions, or test offline in Demo mode.
+            Mixed-signal Bench, 8-channel logic analyzer, 4-channel oscilloscope,
+            1.84–2.79 GHz RF spectrum viewer, USB/UART serial monitor, and dual-channel
+            signal generator running directly in Chrome or Edge on desktop and Android.
+            Flash firmware from the browser, switch tools without re-granting USB
+            permissions, or test offline in Demo mode.
           </p>
 
           <div class="hero-actions">
@@ -388,6 +389,12 @@ const defaultPreview = TOOLS[0]; // Bench as initial hero preview
                 </tr>
               </thead>
               <tbody>
+                <tr>
+                  <td><strong>Bench</strong></td>
+                  <td>2 analog + 8 digital · shared timebase</td>
+                  <td>Not in V0.1 (S3 reference)</td>
+                  <td><code>D0</code>–<code>D1</code> ADC · <code>D0</code>–<code>D7</code> digital · <code>D6</code> Gen</td>
+                </tr>
                 <tr>
                   <td><strong>Logic Analyzer</strong></td>
                   <td>8 ch · up to 20 MHz · 32 KB</td>

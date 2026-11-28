@@ -22,6 +22,27 @@ export interface HotWireTool {
 export const TOOLS: HotWireTool[] = [
   {
     index: '01',
+    slug: 'bench',
+    shortName: 'Bench',
+    name: 'HotWire Bench',
+    summary:
+      'One mixed-signal instrument: 2 calibrated analog channels, 8 digital channels, shared device timebase, UART/SPI/I²C decoders, and an LEDC generator in a single oscilloscope-style view.',
+    note: 'V0.1 proves the integrated workflow on XIAO ESP32-S3: 1 MSPS digital, 83.3 kSPS total ADC, shared t0/trigger/skew metadata, no-wiring self-test and saved-capture rendering.',
+    accent: '#2dd4bf',
+    appUrl: 'https://hotwire-lab.github.io/bench/',
+    repoUrl: 'https://github.com/hotwire-lab/bench',
+    image: '/images/bench.jpg',
+    imageAlt: 'HotWire Bench mixed-signal view with analog channels, digital lanes, UART decode and generator controls',
+    firmwareMin: 'v0.1.0+',
+    specs: [
+      { label: 'Channels', value: '2 analog + 8 digital (D0–D7)' },
+      { label: 'Rates', value: '1 MSPS digital · 83.3 kSPS total ADC' },
+      { label: 'View', value: 'Shared timebase · UART/SPI/I²C · generator' },
+      { label: 'Firmware', value: 'v0.1.0+ (S3, mixed-signal)' },
+    ],
+  },
+  {
+    index: '02',
     slug: 'logic',
     shortName: 'Logic',
     name: 'HotWire Logic Analyzer',
@@ -42,7 +63,7 @@ export const TOOLS: HotWireTool[] = [
     ],
   },
   {
-    index: '02',
+    index: '03',
     slug: 'scope',
     shortName: 'Scope',
     name: 'HotWire Oscilloscope',
@@ -63,7 +84,7 @@ export const TOOLS: HotWireTool[] = [
     ],
   },
   {
-    index: '03',
+    index: '04',
     slug: 'sdr',
     shortName: 'SDR',
     name: 'HotWire SDR',
@@ -84,7 +105,7 @@ export const TOOLS: HotWireTool[] = [
     ],
   },
   {
-    index: '04',
+    index: '05',
     slug: 'serial',
     shortName: 'Serial',
     name: 'HotWire Serial Terminal',
@@ -105,7 +126,7 @@ export const TOOLS: HotWireTool[] = [
     ],
   },
   {
-    index: '05',
+    index: '06',
     slug: 'siggen',
     shortName: 'Gen',
     name: 'HotWire Signal Generator',
@@ -126,3 +147,4 @@ export const TOOLS: HotWireTool[] = [
     ],
   },
 ];
+

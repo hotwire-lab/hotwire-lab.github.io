@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { TOOLS } from '../data/tools';
 
-const defaultPreview = TOOLS[1]; // Scope as initial hero preview
+const defaultPreview = TOOLS[0]; // Bench as initial hero preview
 ---
 
 <Layout>
@@ -44,7 +44,7 @@ const defaultPreview = TOOLS[1]; // Scope as initial hero preview
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="mono-kicker">RUST / WASM · WEB SERIAL &amp; WEBUSB · XIAO ESP32-S3 / C6</p>
-          <h1>Five USB bench tools on one $5 ESP32.</h1>
+          <h1>Six browser bench tools on one \$5 ESP32.</h1>
           <p class="hero-lead">
             Logic analyzer, 4-channel oscilloscope, 1.84–2.79 GHz RF spectrum viewer,
             USB/UART serial monitor, and dual-channel signal generator running directly in Chrome or
@@ -120,9 +120,9 @@ const defaultPreview = TOOLS[1]; // Scope as initial hero preview
       <div class="container">
         <div class="section-header">
           <span class="section-index">01 / INSTRUMENTS</span>
-          <h2>Five browser apps, one shared USB origin</h2>
+          <h2>Six browser apps, one shared USB origin</h2>
           <p>
-            All five PWAs run under <code>hotwire-lab.github.io</code>. Grant USB access once and
+            All six PWAs run under <code>hotwire-lab.github.io</code>. Grant USB access once and
             jump between instruments directly from the top bar.
           </p>
         </div>
@@ -226,8 +226,8 @@ const defaultPreview = TOOLS[1]; // Scope as initial hero preview
           <span class="section-index">03 / HARDWARE &amp; PINOUT</span>
           <h2>Supported boards &amp; pin map</h2>
           <p>
-            One Seeed Studio XIAO board covers all four tools. ESP32-S3 is the primary target for
-            4-channel 1 MSPS Scope and PSRAM SDR; ESP32-C6 is supported across all four tools.
+            One Seeed Studio XIAO board covers the core tools. ESP32-S3 is the primary target for
+            4-channel 1 MSPS Scope and PSRAM SDR; ESP32-C6 is supported by the dedicated tools.
           </p>
         </div>
 
@@ -465,7 +465,7 @@ const defaultPreview = TOOLS[1]; // Scope as initial hero preview
             <p>
               Rust/WASM crate unifying Web Serial, Android WebUSB (CDC-ACM, FTDI, CP210x, CH340,
               PL2303), zero-copy binary framing, firmware verification, in-browser flashing, and
-              touch gestures across all four apps.
+              touch gestures across all six apps.
             </p>
           </div>
           <a
@@ -1464,3 +1464,5 @@ const defaultPreview = TOOLS[1]; // Scope as initial hero preview
     }
   }
 </style>
+
+

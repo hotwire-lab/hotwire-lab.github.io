@@ -33,12 +33,12 @@ export const TOOLS: HotWireTool[] = [
     repoUrl: 'https://github.com/hotwire-lab/bench',
     image: '/images/bench.jpg',
     imageAlt: 'HotWire Bench mixed-signal view with analog channels, digital lanes, UART decode and generator controls',
-    firmwareMin: 'v0.1.0+',
+    firmwareMin: 'v0.2.0+',
     specs: [
       { label: 'Channels', value: '8 configurable: AD (D0–D3), DI/DO (D0–D7)' },
       { label: 'Rates', value: '1 MSPS digital · 83.3 kSPS total ADC' },
       { label: 'View', value: 'Shared timebase · UART/SPI/I²C · generator' },
-      { label: 'Firmware', value: 'v0.1.0+ (S3, mixed-signal)' },
+      { label: 'Firmware', value: 'v0.2.0+ (S3, mixed-signal)' },
     ],
   },
   {
@@ -147,5 +147,6 @@ export const TOOLS: HotWireTool[] = [
     ],
   },
 ];
+
 
 
